@@ -46,15 +46,16 @@ describe('Проверка авторизации', function () {
         cy.get('#sdo-login').type('dumbledore@sct.team'); // ввел верный логин
         cy.get('#sdo-password').type('12345678qQ1'); // ввел верный пароль
         cy.get('.el-button--primary').click(); // нажал войти
-        cy.intercept('get', 'https://dev2.getinfo.radugi.net');
-        cy.get(':nth-child(4) > .el-avatar').click(); 
+        cy.intercept('get', 'https://dev2.getinfo.radugi.net'); // переход на главную страницу
+        cy.get(':nth-child(4) > .el-avatar').click(); // окошко личного кабинета
      }) 
          
 })
  
  // npx cypress open  -- открыть  Cypress --browser chrome
- // План №1
+ // План №2
  // + Найти поле логин и ввести НЕ правильный логин
  // + Найти поле пароль и ввести правильный пароль
  // + Найти кнопку Войти и нажать на нее
- // Проверить, что авторизация прошла успешно
+ // + Проверить, что авторизация прошла успешно
+ // + Проверяю, что окошко личног кабинета работает по клику
